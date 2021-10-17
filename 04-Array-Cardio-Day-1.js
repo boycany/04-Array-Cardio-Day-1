@@ -116,3 +116,5 @@ const transportation = data.reduce((obj, item)=>{
       obj[item]++
       return obj
 }, {})
+
+//9. newFeature (GitHub Practice - Create New Branch)
