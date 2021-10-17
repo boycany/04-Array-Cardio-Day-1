@@ -13,20 +13,6 @@ const inventors = [
       { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
 ];
 
-const people = [
-      'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 
-      'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 
-      'Beethoven, Ludwig', 'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul',
-      'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 
-      'Berlin, Irving','Benn, Tony', 'Benson, Leana', 'Bent, Silas', 'Berle, Milton', 
-      'Berry, Halle', 'Biko, Steve', 'Beck, Glenn', 'Bergman, Ingmar', 'Black, Elk', 
-      'Berio, Luciano','Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin',
-      'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 
-      'Bierce, Ambrose','Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 
-      'Beecher, Henry', 'Biondo, Frank'
-];
-    
-
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
 
@@ -77,8 +63,40 @@ const links = Array.from(div.querySelectorAll('a'))
 const de = links.map(link=>link.textContent).filter(streetName=>streetName.includes('de'))
 
 // 7. sort Exercise
+
+const people = [
+      'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 
+      'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 
+      'Beethoven, Ludwig', 'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul',
+      'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 
+      'Berlin, Irving','Benn, Tony', 'Benson, Leana', 'Bent, Silas', 'Berle, Milton', 
+      'Berry, Halle', 'Biko, Steve', 'Beck, Glenn', 'Bergman, Ingmar', 'Black, Elk', 
+      'Berio, Luciano','Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin',
+      'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 
+      'Bierce, Ambrose','Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 
+      'Beecher, Henry', 'Biondo, Frank'
+];
+    
+
 // Sort the people alphabetically by last name
 
+const peopleOrdered = people.sort((a, b)=>{
+      let splitNameA = a.split(', ')
+      let splitNameB = b.split(', ')
+
+      const lastNameA = splitNameA[1]
+      const lastNameB = splitNameB[1]
+
+     // lastNameA > lastNameB ? 1 : lastNameA < lastNameB ? -1 : 0
+     if(lastNameA > lastNameB){
+            return 1
+     }
+     if (lastNameA < lastNameB) {
+            return -1
+     }
+     return 0
+
+})
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
